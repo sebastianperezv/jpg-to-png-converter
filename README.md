@@ -1,21 +1,25 @@
 # 🖼️ Image Converter: JPG to PNG
 
-This Python script converts all images in a specified input folder into `.png` format and saves them into an output folder.
+# 🖼️ JPG to PNG Converter
+
+A simple Python script to batch convert images from `.jpg` (or other formats) to `.png`.
 
 ## 📂 What It Does
 
-* Takes two command-line arguments: the input folder path and the output folder path.
-* Reads all images in the input folder (e.g., `.jpg`, `.jpeg`).
-* Converts each image to `.png`.
-* Saves them into the specified output folder.
-* Automatically creates the output folder if it doesn't exist.
+* Takes two command-line arguments:
+
+  1. Input folder containing images
+  2. Output folder where converted `.png` files will be saved
+* Converts all images to PNG format using the [Pillow](https://python-pillow.org/) library
+* Automatically creates the output folder if it doesn't exist
+* Keeps the original filenames (but with `.png` extension)
 
 ## 🛠️ Requirements
 
 * Python 3.x
-* [Pillow](https://python-pillow.org/) (Python Imaging Library fork)
+* [Pillow](https://pypi.org/project/Pillow/)
 
-Install Pillow if you don’t have it:
+Install Pillow via pip:
 
 ```bash
 pip install Pillow
@@ -23,33 +27,23 @@ pip install Pillow
 
 ## 🚀 Usage
 
-From the command line, run:
+Run the script from the command line:
 
 ```bash
-python convert.py <input_folder> <output_folder>
+python jpg-to-png-converter.py <input_folder> <output_folder>
 ```
 
 ### Example
 
 ```bash
-python convert.py ./images/ ./converted/
+python jpg-to-png-converter.py ./images/ ./converted/
 ```
 
-* `./images/`: Folder containing source images.
-* `./converted/`: Target folder for `.png` files.
+* `./images/` – Folder with `.jpg` images
+* `./converted/` – Destination folder for `.png` images
 
 ## 📌 Notes
 
-* The script assumes images are directly in the input folder (no subdirectories).
-* Converted images keep the original filename (but with `.png` extension).
-* Make sure to include a trailing slash (`/`) in the folder paths if you're on Unix/macOS. On Windows, you might use `\\` or raw strings.
-
----
-
-Let me know if you want to include:
-
-* Logging instead of `print()`
-* Recursively processing subfolders
-* Example images or screenshots
-* A license file (like MIT)
-
+* Input paths must end with a `/` (on Unix/macOS) or `\\` (on Windows) to avoid file path issues.
+* All converted images are saved in `.png` format regardless of their original type.
+* Subdirectories are not processed — only files in the specified folder are handled.
