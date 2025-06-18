@@ -1,7 +1,4 @@
 # 🖼️ Image Converter: JPG to PNG
-
-# 🖼️ JPG to PNG Converter
-
 A simple Python script to batch convert images from `.jpg` (or other formats) to `.png`.
 
 ## 📂 What It Does
